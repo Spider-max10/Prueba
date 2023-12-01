@@ -1,0 +1,47 @@
+<h1>Modelos en reparacion</h1>
+<div class="row my-4 text-center">
+    <div *ngFor="let m of modelos"class="col-md-4 p-4">
+      <div class="card bg-light card-project">
+        <div class="container-fluid py-2">
+        <div class="card-body">
+          <h4>Modelos</h4>
+          <p>  Tipo:    {{m.tipo}}</p>
+          <p>  modelo:     {{m.modelo}}</p>
+          <p>  vida util:         {{m.vida_util}}</p>
+        <a (click)="reparadomodelo(m._id,m.tipo,m.modelo,m.vida_util)" class="btn" style="color: blue;">
+        <img src="./assets/accept.png" height="18px" alt="">
+        </a>
+        <a (click)="reciclarmodelo(m._id)" class="btn" style="color: blue;">
+            <img src="./assets/reciclar.png" height="18px" alt="">
+            </a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <h1>Series en reparacion</h1>
+<div class="row my-4 text-center">
+    <div *ngFor="let s of series"class="col-md-4 p-4">
+      <div class="card bg-light card-project">
+        <div class="container-fluid py-2">
+        <div class="card-body">
+          <h4>Series</h4>
+          <p>  Nombre:    {{s.nombre}}</p>
+          <p>  Marca:     {{s.marca}}</p>
+          <p>  Tipo:         {{s.tipo}}</p>
+        <a (click)="reparadoserie(s._id,s.nombre,s.marca,s.tipo)" class="btn" style="color: blue;">
+        <img src="./assets/accept.png" height="18px" alt="">
+        </a>
+        <a (click)="reciclarserie(s._id)" class="btn" style="color: blue;">
+            <img src="./assets/reciclar.png" height="18px" alt="">
+            </a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

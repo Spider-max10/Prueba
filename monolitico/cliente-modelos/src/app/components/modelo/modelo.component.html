@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-sm-4 offset-sm-4">
+   <div class="card card-body">
+  <form >
+    <div class="form-group">
+            <input type="text" name="tipo" [(ngModel)]="modelo.tipo" class="form-control" placeholder="tipo" autofocus>
+    </div>
+    <div class="form-group">
+        <input type="text" name="modelo" [(ngModel)]="modelo.modelo" class="form-control" placeholder="modelo" autofocus>
+</div>
+<div class="form-group">
+    <input type="text" name="vida_util" [(ngModel)]="modelo.vida_util" class="form-control" placeholder="vida util" autofocus>
+</div>
+<button (click)="crear()" class="btn btn-primary btn-block">
+    <img src="./assets/create.png" height="18px" alt="">
+  </button>
+  </form>
+   </div>
+    </div>
+  </div>
+
+
+  <div class="row my-4 text-center">
+    <div *ngFor="let m of modelos"class="col-md-4 p-4">
+      <div class="card bg-light card-project">
+        <div class="container-fluid py-2">
+        <div class="card-body">
+          <h4>Modelos</h4>
+          <p>  Tipo:    {{m.tipo}}</p>
+          <p>  modelo:     {{m.modelo}}</p>
+          <p>  vida util:         {{m.vida_util}}</p>
+          <a [routerLink]="['/modelo/edit', m._id]" class="btn">
+          <img src="./assets/edit.png" height="18px" alt="">
+        </a>
+        <a (click)="reparar(m._id,m.tipo,m.modelo,m.vida_util)" class="btn" style="color: blue;">
+        <img src="./assets/support.png" height="18px" alt="">
+        </a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

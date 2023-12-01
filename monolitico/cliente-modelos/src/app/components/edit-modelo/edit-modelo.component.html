@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-sm-4 offset-sm-4">
+   <div class="card card-body">
+  <form >
+    <div class="form-group">
+            <input type="text" name="tipo" [(ngModel)]="modelo.tipo" class="form-control" placeholder="caracteristicas" autofocus>
+    </div>
+    <div class="form-group">
+        <input type="text" name="modelo" [(ngModel)]="modelo.modelo" class="form-control" placeholder="Descripcion" autofocus>
+</div>
+<div class="form-group">
+    <input type="text" name="vida_util" [(ngModel)]="modelo.vida_util" class="form-control" placeholder="vida util" autofocus>
+</div>
+<button (click)="editar()" class="btn btn-info">
+    Editar
+  </button>
+  </form>
+   </div>
+    </div>
+  </div>

@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-sm-4 offset-sm-4">
+   <div class="card card-body">
+  <form >
+    <div class="form-group">
+            <input type="text" name="nombre" [(ngModel)]="serie.nombre" class="form-control" placeholder="nombre" autofocus>
+    </div>
+    <div class="form-group">
+        <input type="text" name="marca" [(ngModel)]="serie.marca" class="form-control" placeholder="marca" autofocus>
+</div>
+<div class="form-group">
+    <input type="text" name="tipo" [(ngModel)]="serie.tipo" class="form-control" placeholder="tipo" autofocus>
+</div>
+<button (click)="crear()" class="btn btn-primary btn-block">
+    <img src="./assets/create.png" height="18px" alt="">
+  </button>
+  </form>
+   </div>
+    </div>
+  </div>
+
+
+  <div class="row my-4 text-center">
+    <div *ngFor="let s of series"class="col-md-4 p-4">
+      <div class="card bg-light card-project">
+        <div class="container-fluid py-2">
+        <div class="card-body">
+          <h4>Series</h4>
+          <p>  Nombre:    {{s.nombre}}</p>
+          <p>  Marca:     {{s.marca}}</p>
+          <p>  Tipo:         {{s.tipo}}</p>
+          <a [routerLink]="['/serie/edit', s._id]" class="btn">
+          <img src="./assets/edit.png" height="18px" alt="">
+        </a>
+        <a (click)=
+        "reparar(s._id, s.nombre,s.marca,s.tipo)" class="btn" style="color: blue;">
+        <img src="./assets/support.png" height="18px" alt="">
+      </a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
